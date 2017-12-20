@@ -53,13 +53,13 @@ module.exports.renderLargePage = function (phantomJsPage, filename, callback, op
     var filesColumns = [[]],
         filesCells;
     var i,j, name;
-    for (i=0; i < dimensions.width; i += limit) {
+    for (i=280; i < dimensions.width; i += limit) {
         filesCells = filesColumns[filesColumns.length-1];
-        for (j=0; j < dimensions.height; j += limit) {
+        for (j=1290; j < dimensions.height; j += limit) {
             phantomJsPage.clipRect = {
                 left: i,
                 top: j,
-                width: Math.min(limit, dimensions.width - i),
+                width: 1300,
                 height: Math.min(limit, dimensions.height - j)
             };
             name = tempDir + '/cell_' + i + '_' + j + '.' + format;
